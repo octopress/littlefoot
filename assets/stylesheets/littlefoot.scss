@@ -1,0 +1,127 @@
+$footnote-style: light;
+
+$footnote-bg: #fff;
+$footnote-text: #444;
+$footnote-button: inherit;
+
+.littlefoot-container {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  transform: translateZ(0);
+  z-index: 1;
+}
+
+.littlefoot-button {
+  border: none;
+  padding: 0;
+  background: none;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: .65em;
+  line-height: .65;
+  vertical-align: middle;
+  color: $footnote-button;
+  transition: {
+    property: opacity, color;
+    duration: .25s;
+    timing-function: ease-out;
+  }
+  opacity: .3;
+  &:hover, .is-open & {
+    opacity: .5;
+  }
+}
+
+.littlefoot-graphic {
+  height: 1em;
+}
+
+.littlefoot-graphic-path {
+  fill: currentColor;
+}
+
+.littlefoot-popover {
+  position: absolute;
+  z-index: 10;
+  transition: {
+    property: opacity, transform;
+    duration: .25s;
+    timing-function: ease-in-out;
+  }
+  opacity: 0;
+  color: $footnote-text;
+  transform: translate(0, .4em) scale(.9,.9);
+
+  .open-down & {
+    top: 1.6em;
+  }
+  .open-up & {
+    bottom: 1.6em;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1,1);
+  }
+
+  &:before {
+    .is-open & {
+      content: "";
+    }
+
+    position: absolute;
+    left: 4px;
+    z-index: 1;
+  }
+
+  .open-down &:before {
+    @include triangle(up, $footnote-bg, .5em);
+    bottom: -.05em;
+  }
+
+  .open-up &:before {
+    @include triangle(down, $footnote-bg, .5em);
+    top: -.05em;
+  }
+}
+
+.littlefoot-footnote {
+  position: absolute;
+  left: -.5em;
+  box-shadow: rgba(#000, .2) 0 3px 8px;
+  border-radius: .5em;
+
+  .open-down & {
+    top: 0;
+  }
+  .open-up & {
+    bottom: 0;
+  }
+}
+
+.littlefoot-footnote-wrapper {
+  max-height: 250px;
+  overflow: auto;
+  background: $footnote-bg;
+  border-radius: .5em;
+}
+.littlefoot-footnote-content {
+  width: 40em;
+  font-size: .7em;
+  line-height: 1.45em;
+  font-family: $meta-font;
+  padding: 0 1.4em;
+  p {
+    margin: 1em 0;
+  }
+}
+
+.littlefoot-test {
+  @extend .littlefoot-footnote-content;
+  max-width: 400px;
+  width: auto;
+  display: inline-block;
+  padding: 0 1.4em;
+}

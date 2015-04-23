@@ -1,0 +1,11 @@
+style: light
+
+light:
+  background: '#fff'
+  text: '#444'
+  button: inherit
+
+dark:
+  background: '#444'
+  text: '#ccc'
+  button: inherit

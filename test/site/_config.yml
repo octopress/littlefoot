@@ -1,6 +1,7 @@
 name: Test site
 gems: 
   - octopress-littlefoot
+  - octopress-debugger
 timezone: UTC
 ink_watch: octopress-littlefoot
 asset_pipeline:

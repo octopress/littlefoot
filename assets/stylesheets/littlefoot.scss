@@ -1,10 +1,14 @@
 @import 'utils';
 
-$footnote-style: light;
-
-$footnote-bg: #fff;
-$footnote-text: #444;
-$footnote-button: inherit;
+{% if plugins.octopress-littlefoot.style == 'dark' %}
+  $footnote-bg: {{ plugins.octopress-littlefoot.dark.background }};
+  $footnote-text: {{ plugins.octopress-littlefoot.dark.text }};
+  $footnote-button: {{ plugins.octopress-littlefoot.dark.button }};
+{% else %}
+  $footnote-bg: {{ plugins.octopress-littlefoot.light.background }};
+  $footnote-text: {{ plugins.octopress-littlefoot.light.text }};
+  $footnote-button: {{ plugins.octopress-littlefoot.light.button }};
+{% endif %}
 
 [class^=littlefoot] {
   box-sizing: border-box;

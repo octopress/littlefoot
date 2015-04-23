@@ -1,11 +1,11 @@
 style: light
 
 light:
-  background: '#fff'
-  text: '#444'
-  button: inherit
+  background: '#fff' # footnote popover background
+  text: '#444'       # popover text color
+  button: inherit    # matches text color
 
 dark:
-  background: '#444'
-  text: '#ccc'
-  button: inherit
+  background: '#444' # footnote popover background
+  text: '#ccc'       # popover text color
+  button: inherit    # matches text color

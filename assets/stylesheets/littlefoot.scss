@@ -1,15 +1,18 @@
+@import 'utils';
+
 $footnote-style: light;
 
 $footnote-bg: #fff;
 $footnote-text: #444;
 $footnote-button: inherit;
 
+[class^=littlefoot] {
+  box-sizing: border-box;
+}
+
 .littlefoot-container {
   position: relative;
   display: inline-block;
-  font-size: 1em;
-  transform: translateZ(0);
-  z-index: 1;
 }
 
 .littlefoot-button {
@@ -45,20 +48,21 @@ $footnote-button: inherit;
 .littlefoot-popover {
   position: absolute;
   z-index: 10;
+  opacity: 0;
+  font-size: 13px;
+  color: $footnote-text;
+  transform: translate(0, .4em) scale(.9,.9);
   transition: {
     property: opacity, transform;
     duration: .25s;
     timing-function: ease-in-out;
   }
-  opacity: 0;
-  color: $footnote-text;
-  transform: translate(0, .4em) scale(.9,.9);
 
   .open-down & {
-    top: 1.6em;
+    top: 2em;
   }
   .open-up & {
-    bottom: 1.6em;
+    bottom: 2em;
   }
 
   &.is-visible {
@@ -66,24 +70,48 @@ $footnote-button: inherit;
     transform: translate(0, 0) scale(1,1);
   }
 
-  &:before {
-    .is-open & {
-      content: "";
-    }
+  &.is-hidden {
+    display: none;
+  }
 
+  &:after {
     position: absolute;
-    left: 4px;
+    left: 2px;
+    z-index: -1;
+    display: block;
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    background: transparent;
+    box-shadow: rgba(#000, .2) 1px 1px 5px;
+  }
+
+  &:before {
+    position: absolute;
+    left: -1px;
     z-index: 1;
   }
 
+  .is-open &:before, .is-open &:after {
+    content: "";
+  }
+
   .open-down &:before {
-    @include triangle(up, $footnote-bg, .5em);
-    bottom: -.05em;
+    @include triangle(up, $footnote-bg, 11px);
+    bottom: -.5px;
   }
 
   .open-up &:before {
-    @include triangle(down, $footnote-bg, .5em);
-    top: -.05em;
+    @include triangle(down, $footnote-bg, 11px);
+    top: -.5px;
+  }
+
+  .open-down &:after {
+    bottom: -9px;
+  }
+
+  .open-up &:after {
+    top: -9px;
   }
 }
 
@@ -109,13 +137,13 @@ $footnote-button: inherit;
 }
 .littlefoot-footnote-content {
   width: 40em;
-  font-size: .7em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.45em;
-  font-family: $meta-font;
   padding: 0 1.4em;
   p {
     margin: 1em 0;
   }
+  box-sizing: border-box;
 }
 
 .littlefoot-test {
@@ -123,5 +151,9 @@ $footnote-button: inherit;
   max-width: 400px;
   width: auto;
   display: inline-block;
-  padding: 0 1.4em;
+}
+
+.littlefoot-test-wrapper {
+  display: inline-block;
+  font-size: 13px;
 }

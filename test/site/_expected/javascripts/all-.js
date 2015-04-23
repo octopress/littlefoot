@@ -1,3 +1,4 @@
+/* Plugin: Octopress Littlefoot */
 (function(){
 
   var LittleFoot = {

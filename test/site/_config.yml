@@ -1,4 +1,7 @@
 name: Test site
-gems: []
+gems: 
+  - octopress-littlefoot
 timezone: UTC
-markdown: redcarpet
+ink_watch: octopress-littlefoot
+asset_pipeline:
+  compress_js: false

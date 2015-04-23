@@ -34,8 +34,6 @@
     click: function (event) {
       self = this
 
-      console.log('called', event.target)
-
       // Did a footnote button trigger the click event?
       var button = getParent(event.target, '.littlefoot-button')
 

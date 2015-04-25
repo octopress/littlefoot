@@ -1,13 +1,13 @@
 @import 'utils';
 
-{% if plugins.octopress-littlefoot.style == 'dark' %}
-  $footnote-bg: {{ plugins.octopress-littlefoot.dark.background }};
-  $footnote-text: {{ plugins.octopress-littlefoot.dark.text }};
-  $footnote-button: {{ plugins.octopress-littlefoot.dark.button }};
+{% if plugins.littlefoot.style == 'dark' %}
+  $footnote-bg: {{ plugins.littlefoot.dark.background }};
+  $footnote-text: {{ plugins.littlefoot.dark.text }};
+  $footnote-button: {{ plugins.littlefoot.dark.button }};
 {% else %}
-  $footnote-bg: {{ plugins.octopress-littlefoot.light.background }};
-  $footnote-text: {{ plugins.octopress-littlefoot.light.text }};
-  $footnote-button: {{ plugins.octopress-littlefoot.light.button }};
+  $footnote-bg: {{ plugins.littlefoot.light.background }};
+  $footnote-text: {{ plugins.littlefoot.light.text }};
+  $footnote-button: {{ plugins.littlefoot.light.button }};
 {% endif %}
 
 [class^=littlefoot] {

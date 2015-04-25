@@ -3,7 +3,7 @@ require 'octopress-ink'
 
 Octopress::Ink.add_plugin({
   name:          "Octopress Littlefoot",
-  slug:          "octopress-littlefoot",
+  slug:          "littlefoot",
   gem:           "octopress-littlefoot",
   path:          File.expand_path(File.join(File.dirname(__FILE__), "..")),
   type:          "plugin",

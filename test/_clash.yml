@@ -9,4 +9,4 @@
   build: true
   compare: _expected-dark _site/stylesheets
   config:
-    octopress-littlefoot: _dark.yml
+    littlefoot: _dark.yml

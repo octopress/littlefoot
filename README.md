@@ -2,6 +2,10 @@
 
 Fancy footnote popovers with native Javascript, for any Jekyll site.
 
+[![Build Status](http://img.shields.io/travis/octopress/littlefoot.svg)](https://travis-ci.org/octopress/littlefoot)
+[![Gem Version](http://img.shields.io/gem/v/octopress-littlefoot.svg)](https://rubygems.org/gems/octopress-littlefoot)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://octopress.mit-license.org)
+
 ## Installation
 
 Add this line to your application's Gemfile:

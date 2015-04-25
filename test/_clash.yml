@@ -1,5 +1,12 @@
 - 
   title: Test Build
-  dir: site
+  dir: test-site
   build: true
   compare: _expected _site
+- 
+  title: Test dark setting
+  dir: test-site
+  build: true
+  compare: _expected-dark _site/stylesheets
+  config:
+    octopress-littlefoot: _dark.yml

@@ -37,6 +37,15 @@ Add `{% js_asset_tag %}` and `{% css_asset_tag %}` to your
 site's layout to automatically add Littlefoot's assets to your site
 whenever jekyll builds it.
 
+
+To add a footnote to a Markdown document, use this syntax:
+
+```markdown
+Here is some text containing a footnote.[^1]
+
+[^1]: Here is the text of the footnote itself.
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/octopress/littlefoot/fork )

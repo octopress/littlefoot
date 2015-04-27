@@ -40,7 +40,7 @@
   z-index: 10;
   opacity: 0;
   font-size: 13px;
-  color: #ccc;
+  color: #fff;
   -webkit-transform: translate(0, 0.4em) scale(0.9, 0.9);
       -ms-transform: translate(0, 0.4em) scale(0.9, 0.9);
           transform: translate(0, 0.4em) scale(0.9, 0.9);
@@ -88,7 +88,7 @@
   content: ""; }
 
 .open-down .littlefoot-popover:before {
-  border-bottom: 11px solid #444;
+  border-bottom: 11px solid rgba(0, 0, 0, 0.8);
   border-left: 11px solid transparent;
   border-right: 11px solid transparent;
   height: 0;
@@ -98,7 +98,7 @@
 .open-up .littlefoot-popover:before {
   border-right: 11px solid transparent;
   border-left: 11px solid transparent;
-  border-top: 11px solid #444;
+  border-top: 11px solid rgba(0, 0, 0, 0.8);
   height: 0;
   width: 0;
   top: -.5px; }
@@ -124,7 +124,7 @@
 .littlefoot-footnote-wrapper {
   max-height: 250px;
   overflow: auto;
-  background: #444;
+  background: rgba(0, 0, 0, 0.8);
   border-radius: .5em; }
 
 .littlefoot-footnote-content, .littlefoot-test {

@@ -3,10 +3,10 @@
 {% if plugin.theme == 'light' %}
   $footnote-bg: #fff;
   $footnote-text: #444;
-{% else if plugin.theme == 'dark' %}
+{% elsif plugin.theme == 'dark' %}
   $footnote-bg: #444;
   $footnote-text: #ccc;
-{% else if plugin.theme == 'custom' %}
+{% elsif plugin.theme == 'custom' %}
   $footnote-bg: {{ plugin.background }};
   $footnote-text: {{ plugin.text }};
 {% endif %}

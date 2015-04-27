@@ -1,0 +1,5 @@
+theme: custom                # light, dark,  custom
+ 
+# To set custom colors for footnote uncomment and change the values below:
+background: 'rgba(#000, .8)' # footnote popover background
+text: '#fff'                 # popover text color

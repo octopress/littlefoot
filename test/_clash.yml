@@ -1,12 +1,19 @@
 - 
-  title: Test Build
+  title: Default bulid
   dir: test-site
   build: true
   compare: _expected _site
 - 
-  title: Test dark setting
+  title: Dark theme
   dir: test-site
   build: true
   compare: _expected-dark _site/stylesheets
   config:
     littlefoot: _dark.yml
+- 
+  title: Custom theme
+  dir: test-site
+  build: true
+  compare: _expected-custom _site/stylesheets
+  config:
+    littlefoot: _custom.yml

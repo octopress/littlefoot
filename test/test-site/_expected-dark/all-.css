@@ -3,9 +3,6 @@
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
 
-body {
-  font-size: 20px; }
-
 .littlefoot-container {
   position: relative;
   display: inline-block; }
@@ -102,7 +99,7 @@ body {
   top: -.5em; }
 
 .littlefoot-footnote {
-  font-size: 13px;
+  font-size: 0.9em;
   color: #ccc;
   position: absolute;
   left: -.5em;
@@ -139,4 +136,4 @@ body {
 
 .littlefoot-test-wrapper {
   display: inline-block;
-  font-size: 13px; }
+  font-size: 0.9em; }

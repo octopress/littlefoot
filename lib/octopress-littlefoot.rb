@@ -10,5 +10,4 @@ Octopress::Ink.add_plugin({
   version:       Octopress::Littlefoot::VERSION,
   description:   "Fancy footnote popovers with native Javascript",
   source_url:    "https://github.com/octopress/littlefoot",
-  website:       "http://littlefootjs.com"
 })

@@ -6,8 +6,13 @@
 {% elsif plugin.theme == 'dark' %}
   $footnote-bg: #444;
   $footnote-text: #ccc;
-{% elsif plugin.theme == 'custom' %}
+{% endif %}
+
+{% if plugin.background %}
   $footnote-bg: {{ plugin.background }};
+{% endif %}
+
+{% if plugin.text %}
   $footnote-text: {{ plugin.text }};
 {% endif %}
 

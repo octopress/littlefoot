@@ -187,7 +187,7 @@
                   +this.footnoteContent(el)
                 +'</div>'
               +'</div>'
-            +'</div>'
+            +'</div><div class="littlefoot-popover-triangle"></div>'
           +'</aside>'
       },
 

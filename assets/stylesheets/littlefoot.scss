@@ -24,6 +24,10 @@ $footnote-max-width: {{ plugin.max-width }};
   box-sizing: border-box;
 }
 
+body {
+  font-size: 20px;
+}
+
 .littlefoot-container {
   position: relative;
   display: inline-block;
@@ -36,8 +40,7 @@ $footnote-max-width: {{ plugin.max-width }};
   margin: 0;
   outline: none;
   cursor: pointer;
-  font-size: .65em;
-  line-height: .65;
+  font-size: .75em;
   vertical-align: middle;
   color: $footnote-button;
   transition: {
@@ -52,7 +55,7 @@ $footnote-max-width: {{ plugin.max-width }};
 }
 
 .littlefoot-graphic {
-  height: 1em;
+  width: 2em;
 }
 
 .littlefoot-graphic-path {
@@ -63,9 +66,7 @@ $footnote-max-width: {{ plugin.max-width }};
   position: absolute;
   z-index: 10;
   opacity: 0;
-  font-size: $footnote-font-size;
-  color: $footnote-text;
-  transform: translate(0, .4em) scale(.9,.9);
+  transform: scale(.8,.8);
   transition: {
     property: opacity, transform;
     duration: .25s;
@@ -73,63 +74,65 @@ $footnote-max-width: {{ plugin.max-width }};
   }
 
   .open-down & {
-    top: 2em;
+    top: 1.6em;
   }
   .open-up & {
-    bottom: 2em;
+    bottom: 1.6em;
   }
 
   &.is-visible {
     opacity: 1;
-    transform: translate(0, 0) scale(1,1);
+    transform: scale(1,1);
   }
 
   &.is-hidden {
     display: none;
   }
 
-  &:after {
+}
+
+.littlefoot-popover-triangle {
+  position: absolute;
+  top: -.7em;
+  height: .7em;
+  width: 2.2em;
+  overflow: hidden;
+  &:after, &:before {
     position: absolute;
-    left: 2px;
-    z-index: -1;
+    left: .25em;
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 1em;
+    height: 1em;
     transform: rotate(45deg);
+  }
+
+  &:after {
+    z-index: -1;
     background: transparent;
-    box-shadow: rgba(#000, .2) 1px 1px 5px;
+    box-shadow: rgba(#000, .2) 1px 1px 6px;
   }
 
   &:before {
-    position: absolute;
-    left: -1px;
     z-index: 1;
+    background: $footnote-bg;
   }
 
   .is-open &:before, .is-open &:after {
     content: "";
   }
 
-  .open-down &:before {
-    @include triangle(up, $footnote-bg, 11px);
-    bottom: -.5px;
+  .open-down &:before, .open-down &:after {
+    bottom: -.5em;
   }
 
-  .open-up &:before {
-    @include triangle(down, $footnote-bg, 11px);
-    top: -.5px;
-  }
-
-  .open-down &:after {
-    bottom: -9px;
-  }
-
-  .open-up &:after {
-    top: -9px;
+  .open-up &:before, .open-up &:after {
+    top: -.5em;
   }
 }
 
 .littlefoot-footnote {
+  font-size: $footnote-font-size;
+  color: $footnote-text;
   position: absolute;
   left: -.5em;
   box-shadow: rgba(#000, .2) 0 3px 8px;

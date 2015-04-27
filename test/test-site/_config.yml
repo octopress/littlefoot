@@ -3,6 +3,7 @@ gems:
   - octopress-littlefoot
   - octopress-debugger
 timezone: UTC
-ink_watch: octopress-littlefoot
+ink_watch: littlefoot
 asset_pipeline:
   compress_js: false
+  compress_css: false 

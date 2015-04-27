@@ -1,11 +1,9 @@
-style: light
+font-size: 13px
+max-width: 500px
 
-light:
-  background: '#fff' # footnote popover background
-  text: '#444'       # popover text color
-  button: inherit    # matches text color
+button-color: inherit  # matches text color
+theme: light           # light, dark,  custom
 
-dark:
-  background: '#444' # footnote popover background
-  text: '#ccc'       # popover text color
-  button: inherit    # matches text color
+# To set custom colors for footnote uncomment and change the values below:
+#background: '#fff' # footnote popover background
+#text: '#444'       # popover text color

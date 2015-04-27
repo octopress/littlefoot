@@ -1,14 +1,19 @@
 @import 'utils';
 
-{% if plugins.littlefoot.style == 'dark' %}
-  $footnote-bg: {{ plugins.littlefoot.dark.background }};
-  $footnote-text: {{ plugins.littlefoot.dark.text }};
-  $footnote-button: {{ plugins.littlefoot.dark.button }};
-{% else %}
-  $footnote-bg: {{ plugins.littlefoot.light.background }};
-  $footnote-text: {{ plugins.littlefoot.light.text }};
-  $footnote-button: {{ plugins.littlefoot.light.button }};
+{% if plugin.theme == 'light' %}
+  $footnote-bg: #fff;
+  $footnote-text: #444;
+{% else if plugin.theme == 'dark' %}
+  $footnote-bg: #444;
+  $footnote-text: #ccc;
+{% else if plugin.theme == 'custom' %}
+  $footnote-bg: {{ plugin.background }};
+  $footnote-text: {{ plugin.text }};
 {% endif %}
+
+$footnote-button: {{ plugin.button-color }};
+$footnote-font-size: {{ plugin.font-size }};
+$footnote-max-width: {{ plugin.max-width }};
 
 [class^=littlefoot] {
   box-sizing: border-box;
@@ -53,7 +58,7 @@
   position: absolute;
   z-index: 10;
   opacity: 0;
-  font-size: 13px;
+  font-size: $footnote-font-size;
   color: $footnote-text;
   transform: translate(0, .4em) scale(.9,.9);
   transition: {
@@ -152,12 +157,12 @@
 
 .littlefoot-test {
   @extend .littlefoot-footnote-content;
-  max-width: 400px;
+  max-width: $footnote-max-width;
   width: auto;
   display: inline-block;
 }
 
 .littlefoot-test-wrapper {
   display: inline-block;
-  font-size: 13px;
+  font-size: $footnote-font-size;
 }

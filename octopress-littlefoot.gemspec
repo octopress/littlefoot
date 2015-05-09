@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "clash"
   spec.add_development_dependency "octopress-debugger"
   
-  spec.add_runtime_dependency "octopress-ink", "~> 1.0.0.pre"
+  spec.add_runtime_dependency "octopress-ink", "~> 1.0"
 end

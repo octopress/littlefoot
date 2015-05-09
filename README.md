@@ -40,7 +40,7 @@ whenever jekyll builds it.
 
 To add a footnote to a Markdown document, use this syntax:
 
-```markdown
+```
 Here is some text containing a footnote.[^1]
 
 [^1]: Here is the text of the footnote itself.

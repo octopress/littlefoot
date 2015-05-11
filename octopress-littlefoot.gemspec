@@ -9,7 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Brandon Mathis"]
   spec.email         = ["brandon@imathis.com"]
   spec.summary       = %q{Fancy footnote popovers with native Javascript}
-  spec.description   = %q{Fancy footnote popovers with native Javascript}
   spec.homepage      = "https://github.com/octopress/littlefoot"
   spec.license       = "MIT"
 

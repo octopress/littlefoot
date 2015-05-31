@@ -4,24 +4,31 @@
     initialize: function(){
       self = this
 
-      document.addEventListener("DOMContentLoaded", function(event) {
-        var anchors = document.querySelectorAll("sup[id^=fnref] a")
-
-        if (anchors.length > 0) {
-
-          Array.prototype.forEach.call(anchors, function(anchor){
-            self.setup(anchor)
-          })
-
-          document.addEventListener("click", self.click.bind(self))
-
-          document.querySelector('div.footnotes').remove()
-        }
-      })
+      if (document.readyState == 'interactive') {
+        self.setup()
+      } else {
+        document.addEventListener("DOMContentLoaded", function(event) {
+          self.setup()
+        })
+      }
 
     },
 
     setup: function (anchor) {
+      var anchors = document.querySelectorAll("sup[id^=fnref] a")
+
+      if (anchors.length > 0) {
+
+        Array.prototype.forEach.call(anchors, function(anchor){
+          self.addFootnote(anchor)
+        })
+
+        document.addEventListener("click", self.click.bind(self))
+        document.querySelector('div.footnotes').remove()
+      }
+    },
+
+    addFootnote: function(anchor) {
       // We want to add the footnote adjacent to the footnote <sup> element
       var sup = getParent(anchor, 'sup')
       sup.insertAdjacentHTML('afterend', this.template.wrapper(anchor));
